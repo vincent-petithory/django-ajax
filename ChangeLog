@@ -1,4 +1,41 @@
-commit b308d005c908ee775f00a587a8b32ee5a4bafe12
+commit 999dd0d3d8b81a0c28a56e2f0268b542c652fd08
+Author: Vincent Petithory <vincent.petithory@gmail.com>
+Date:   Thu Sep 30 17:39:02 2010 +0200
+
+    Add the djangoajaxtest example. Updated NEWS file.
+
+ ChangeLog                                          |   41 +-
+ NEWS                                               |    3 +
+ examples/djangoajaxtest/basic/ajax.py              |   23 +
+ .../images/ui-bg_flat_0_aaaaaa_40x100.png          |  Bin 0 -> 180 bytes
+ .../images/ui-bg_flat_75_ffffff_40x100.png         |  Bin 0 -> 178 bytes
+ .../images/ui-bg_glass_55_fbf9ee_1x400.png         |  Bin 0 -> 120 bytes
+ .../images/ui-bg_glass_65_ffffff_1x400.png         |  Bin 0 -> 105 bytes
+ .../images/ui-bg_glass_75_dadada_1x400.png         |  Bin 0 -> 111 bytes
+ .../images/ui-bg_glass_75_e6e6e6_1x400.png         |  Bin 0 -> 110 bytes
+ .../images/ui-bg_glass_95_fef1ec_1x400.png         |  Bin 0 -> 119 bytes
+ .../ui-bg_highlight-soft_75_cccccc_1x100.png       |  Bin 0 -> 101 bytes
+ .../smoothness/images/ui-icons_222222_256x240.png  |  Bin 0 -> 4369 bytes
+ .../smoothness/images/ui-icons_2e83ff_256x240.png  |  Bin 0 -> 4369 bytes
+ .../smoothness/images/ui-icons_454545_256x240.png  |  Bin 0 -> 4369 bytes
+ .../smoothness/images/ui-icons_888888_256x240.png  |  Bin 0 -> 4369 bytes
+ .../smoothness/images/ui-icons_cd0a0a_256x240.png  |  Bin 0 -> 4369 bytes
+ .../css/smoothness/jquery-ui-1.8.5.custom.css      |  572 ++++++++++++++
+ .../basic/media/js/jquery-1.4.2.min.js             |  154 ++++
+ .../basic/media/js/jquery-ui-1.8.5.custom.min.js   |  778 ++++++++++++++++++++
+ examples/djangoajaxtest/basic/models.py            |    3 +
+ examples/djangoajaxtest/basic/templates/500.html   |    1 +
+ .../basic/templates/basic/index.html               |   60 ++
+ .../basic/templatetags/basicmedia.py               |   15 +
+ examples/djangoajaxtest/basic/tests.py             |   23 +
+ examples/djangoajaxtest/basic/urls.py              |   12 +
+ examples/djangoajaxtest/basic/views.py             |    7 +
+ examples/djangoajaxtest/manage.py                  |   11 +
+ examples/djangoajaxtest/settings.py                |  101 +++
+ examples/djangoajaxtest/urls.py                    |   15 +
+ 29 files changed, 1817 insertions(+), 2 deletions(-)
+
+commit 7d965f4383387756d177805e4a1dfd67cbb32f56
 Author: Vincent Petithory <vincent.petithory@gmail.com>
 Date:   Thu Sep 30 17:36:58 2010 +0200
 
@@ -16,6 +53,7 @@ Date:   Thu Sep 30 17:36:58 2010 +0200
  AUTHORS                  |    1 +
  COPYING                  |  675 ++++++++++++++++++++++++++++++++++++++++++++++
  COPYING.LESSER           |  165 +++++++++++
+ ChangeLog                |   27 ++
  MANIFEST.in              |    9 +
  README                   |   26 ++
  djangoajax/__init__.py   |   32 +++
@@ -24,4 +62,4 @@ Date:   Thu Sep 30 17:36:58 2010 +0200
  djangoajax/tests.py      |   44 +++
  djangoajax/views.py      |   21 ++
  setup.py                 |   54 ++++
- 12 files changed, 1105 insertions(+), 0 deletions(-)
+ 13 files changed, 1132 insertions(+), 0 deletions(-)

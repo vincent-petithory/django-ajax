@@ -1,0 +1,60 @@
+{% load basicmedia %}
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" href="{% basic_media_prefix %}css/smoothness/jquery-ui-1.8.5.custom.css" rel="stylesheet" />    
+    <script type="text/javascript" src="{% basic_media_prefix %}js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="{% basic_media_prefix %}js/jquery-ui-1.8.5.custom.min.js"></script>
+    
+    <script type="text/javascript">
+            $(function(){
+
+                // Button
+                $("#button").button()
+                    .click(function ()
+                    {
+                        send();
+                        return false;
+                    });
+                
+                
+            });
+            
+            // send the ajax request (POST)
+            function send()
+            {
+                $.post(
+                    "{% url djangoajaxtest.basic.ajax.store_message %}",
+                    {message: $("#input_message").val()},
+                    function (data)
+                    {
+                        var code = parseInt(data.code);
+                        if (code > 0)
+                            alert("Error "+code.toString()+": "+String(data.errorString));
+                        else
+                            alert("You sent: "+String(data.message));
+                    }
+                );
+            }
+            
+            // key handler of the input field
+            function onKeyPress(event)
+            {
+                var key = event.keyCode || event.which;
+                // if ENTER
+                if (key == 13)
+                    send();
+            }
+        
+        </script>
+    
+</head>
+<body>
+    <p><label for="message">Message: </label><input name="message" id="input_message" value="" onkeypress="onKeyPress(event)" /></p>
+    <button id="button">Send</button>
+    <p>Click <a href="{% url djangoajaxtest.basic.ajax.store_message %}">here</a> to access the ajax remote function called. <br />You will be rejected.</p>
+</body>
+</html>
