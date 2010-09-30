@@ -1,0 +1,27 @@
+commit b308d005c908ee775f00a587a8b32ee5a4bafe12
+Author: Vincent Petithory <vincent.petithory@gmail.com>
+Date:   Thu Sep 30 17:36:58 2010 +0200
+
+    Initial commit.
+    
+     * Add a decorator (@ajax) to protect your ajax functions from
+       non-ajax requests.
+     * Add a HttpResponseAjax to return a json-based HttpResponse.
+     * Add MANIFEST.in and setup.py for dist.
+     * Add standard project files (AUTHORS, ChangeLog,
+       COPYING, COPYING.LESSER, INSTALL, NEWS, README)
+     * Add .gitignore
+
+ .gitignore               |    5 +
+ AUTHORS                  |    1 +
+ COPYING                  |  675 ++++++++++++++++++++++++++++++++++++++++++++++
+ COPYING.LESSER           |  165 +++++++++++
+ MANIFEST.in              |    9 +
+ README                   |   26 ++
+ djangoajax/__init__.py   |   32 +++
+ djangoajax/decorators.py |   52 ++++
+ djangoajax/models.py     |   21 ++
+ djangoajax/tests.py      |   44 +++
+ djangoajax/views.py      |   21 ++
+ setup.py                 |   54 ++++
+ 12 files changed, 1105 insertions(+), 0 deletions(-)

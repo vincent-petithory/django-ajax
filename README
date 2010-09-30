@@ -1,0 +1,26 @@
+# django app for ajax
+
+A decorator (@ajax) and an HttpResponseAjax for your ajax needs
+
+Use @ajax on a view function to notify it is an ajax function.
+It will cause the function to return a 412 http response in case the function 
+is not called by an ajax request. This is the behavior in DEBUG = True.
+With DEBUG = False, a Http404 is raised.
+
+in @ajax decorated functions, return HttpResponseAjax responses. they will 
+return json encoded responses, and they take a single argument (a dictionary)
+
+	#-*- coding:utf-8 -*-
+	
+	from djangoajax.decorators import ajax
+	from djangoajax import HttpResponseAjax
+	
+	@ajax
+	def identity(request):
+	    response = {}
+	    response.update({'some_key': 'some value'})
+	    return HttpResponseAjax(response)
+	
+
+
+
