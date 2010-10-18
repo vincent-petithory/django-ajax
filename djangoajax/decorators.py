@@ -29,9 +29,7 @@ from django.http import Http404, HttpResponse
 
 def ajax(function=None):
     """
-    Decorator for views that checks that the user passes the given test,
-    redirecting to the log-in page if necessary. The test should be a callable
-    that takes the user object and returns True if the user passes.
+    Decorator for views that checks if the request is a valid ajax request.
     """
     def decorator(view_func):
         def _wrapped_view(request, *args, **kwargs):
